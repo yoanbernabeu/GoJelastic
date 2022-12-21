@@ -38,6 +38,18 @@ func init() {
 	stopEnvCmd.MarkFlagRequired("appid")
 	stopEnvCmd.MarkFlagRequired("token")
 	stopEnvCmd.MarkFlagRequired("url")
+
+	rootCmd.AddCommand(redeployContainerByIdCmd)
+	redeployContainerByIdCmd.Flags().String("token", "", "A token is required")
+	redeployContainerByIdCmd.Flags().String("url", "", "A url is required")
+	redeployContainerByIdCmd.Flags().String("nodeid", "", "An nodeid is required")
+	redeployContainerByIdCmd.Flags().String("tag", "", "An tag is required")
+	redeployContainerByIdCmd.Flags().String("appid", "", "An appid is required")
+	redeployContainerByIdCmd.MarkFlagRequired("nodeid")
+	redeployContainerByIdCmd.MarkFlagRequired("tag")
+	redeployContainerByIdCmd.MarkFlagRequired("token")
+	redeployContainerByIdCmd.MarkFlagRequired("url")
+	redeployContainerByIdCmd.MarkFlagRequired("appid")
 }
 
 var getEnvsCmd = &cobra.Command{
@@ -97,6 +109,24 @@ var stopEnvCmd = &cobra.Command{
 		appid, _ := cmd.Flags().GetString("appid")
 
 		finalUrl := url + "/environment/control/rest/stopenv?envName=" + appid + "&session=" + token
+
+		response := makeRequest(finalUrl, "GET", "")
+		fmt.Println(response)
+	},
+}
+
+var redeployContainerByIdCmd = &cobra.Command{
+	Use:   "redeployContainerById",
+	Short: "Redeploy a container by id",
+	Long:  "Redeploy a container by id and specify Tag",
+	Run: func(cmd *cobra.Command, args []string) {
+		token, _ := cmd.Flags().GetString("token")
+		url, _ := cmd.Flags().GetString("url")
+		nodeid, _ := cmd.Flags().GetString("nodeid")
+		tag, _ := cmd.Flags().GetString("tag")
+		appId, _ := cmd.Flags().GetString("appid")
+
+		finalUrl := url + "/environment/control/rest/redeploycontainerbyid?nodeId=" + nodeid + "&tag=" + tag + "&session=" + token + "&envName=" + appId
 
 		response := makeRequest(finalUrl, "GET", "")
 		fmt.Println(response)

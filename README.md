@@ -16,6 +16,8 @@ This will make it easier for developers to manage and deploy applications on Jel
 
 #### From source
 
+GoJelastic is written in Go, so you need to install it first.
+
 ```bash
 git clone git@github.com:yoanbernabeu/GoJelastic.git
 cd GoJelastic
@@ -29,13 +31,14 @@ go build -o GoJelastic
 * APPID: The application ID
 * TOKEN: Get your token [here](https://www.virtuozzo.com/application-platform-ops-docs/platform-access-token/)
 * URL: Your Jelastic API URL
+* NODEID: The unique ID of the node/container
 
 ### Get Environment Info
 
 Get informations about one environment
 
 ```bash
-./GoJelastic getEnv --appid <APPID> --token <TOKEN> --env <ENV> --url <URL>
+./GoJelastic getEnv --appid <APPID> --token <TOKEN> --url <URL>
 ```
 
 ### Get Environments Info
@@ -43,7 +46,7 @@ Get informations about one environment
 Get informations about all environments
 
 ```bash
-./GoJelastic getEnvs --token <TOKEN> --env <ENV> --url <URL>
+./GoJelastic getEnvs --token <TOKEN> --url <URL>
 ```
 
 ### Start Environment
@@ -51,7 +54,7 @@ Get informations about all environments
 Start an environment
 
 ```bash
-./GoJelastic startEnv --appid <APPID> --token <TOKEN> --env <ENV> --url <URL>
+./GoJelastic startEnv --appid <APPID> --token <TOKEN> --url <URL>
 ```
 
 ### Stop Environment
@@ -59,7 +62,15 @@ Start an environment
 Stop an environment
 
 ```bash
-./GoJelastic stopEnv --appid <APPID> --token <TOKEN> --env <ENV> --url <URL>
+./GoJelastic stopEnv --appid <APPID> --token <TOKEN> --url <URL>
+```
+
+### Redeploy Container by ID
+
+Redeploy a container by ID and target tag
+
+```bash
+./GoJelastic redeployEnv --nodeid <NODEID> --tag <TAG> --appid <APPID> --token <TOKEN> --url <URL>
 ```
 
 ## License
