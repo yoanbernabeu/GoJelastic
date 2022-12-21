@@ -1,5 +1,6 @@
 # GoJelastic (Experimental)
 
+![GoJelastic Logo](GoJelastic.png)
 A Alternative CLI for Jelastic in Go
 
 ## Why rewrite the CLI in Go?
