@@ -14,6 +14,21 @@ This will make it easier for developers to manage and deploy applications on Jel
 
 ### Installation
 
+#### From binary
+
+* Debian/Ubuntu
+
+```bash
+wget https://github.com/yoanbernabeu/GoJelastic/releases/download/v0.1.0/GoJelastic-v0.1.0-linux-amd64.tar.gz
+tar -xvzf GoJelastic-v0.1.0-linux-amd64.tar.gz
+sudo mv GoJelastic /usr/local/bin/
+sudo chmod +x /usr/local/bin/GoJelastic
+```
+
+* Other Operating Systems
+
+Please download the binary from the [release page](https://github.com/yoanbernabeu/GoJelastic/releases) and move it to your PATH.
+
 #### From source
 
 GoJelastic is written in Go, so you need to install it first.
