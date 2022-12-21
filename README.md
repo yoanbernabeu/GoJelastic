@@ -1,6 +1,5 @@
 # GoJelastic (Experimental)
 
-![GoJelastic Logo](GoJelastic.png)
 A Alternative CLI for Jelastic in Go
 
 ## Why rewrite the CLI in Go?
@@ -70,3 +69,5 @@ Stop an environment
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+![GoJelastic Logo](GoJelastic.png)
