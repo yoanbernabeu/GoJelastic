@@ -1,6 +1,6 @@
 name: Publish docs via GitHub Pages
 on:
-  push
+  push:
 
 jobs:
   build:
@@ -9,9 +9,10 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
-        
+
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: mkdocs.yml
+          CONFIG_FILE: ./mkdocs.yml
+          EXTRA_PACKAGES: build-base
