@@ -19,8 +19,8 @@ This will make it easier for developers to manage and deploy applications on Jel
 * Debian/Ubuntu
 
 ```bash
-wget https://github.com/yoanbernabeu/GoJelastic/releases/download/v0.1.2/GoJelastic-v0.1.2-linux-amd64.tar.gz
-tar -xvzf GoJelastic-v0.1.2-linux-amd64.tar.gz
+wget https://github.com/yoanbernabeu/GoJelastic/releases/download/v0.1.2/GoJelastic-0.1.2-linux-amd64.tar.gz
+tar -xvzf GoJelastic-0.1.2-linux-amd64.tar.gz
 sudo mv GoJelastic /usr/local/bin/
 sudo chmod +x /usr/local/bin/GoJelastic
 ```
