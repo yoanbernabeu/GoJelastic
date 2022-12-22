@@ -48,12 +48,21 @@ go build -o GoJelastic
 * URL: Your Jelastic API URL
 * NODEID: The unique ID of the node/container
 
+### Configure Environment into a file
+
+If you want to use the CLI without passing the token and the URL each time, you can configure it into a file (stored in your home directory in a file named `gojelastic.env`)
+
+
+```bash
+GoJelastic configure --token <TOKEN> --url <URL>
+```
+
 ### Get Environment Info
 
 Get informations about one environment
 
 ```bash
-./GoJelastic getEnv --appid <APPID> --token <TOKEN> --url <URL>
+GoJelastic getEnv --appid <APPID>
 ```
 
 ### Get Environments Info
@@ -61,7 +70,7 @@ Get informations about one environment
 Get informations about all environments
 
 ```bash
-./GoJelastic getEnvs --token <TOKEN> --url <URL>
+GoJelastic getEnvs
 ```
 
 ### Start Environment
@@ -69,7 +78,7 @@ Get informations about all environments
 Start an environment
 
 ```bash
-./GoJelastic startEnv --appid <APPID> --token <TOKEN> --url <URL>
+GoJelastic startEnv --appid <APPID>
 ```
 
 ### Stop Environment
@@ -77,7 +86,7 @@ Start an environment
 Stop an environment
 
 ```bash
-./GoJelastic stopEnv --appid <APPID> --token <TOKEN> --url <URL>
+GoJelastic stopEnv --appid <APPID>
 ```
 
 ### Redeploy Container by ID
@@ -85,7 +94,7 @@ Stop an environment
 Redeploy a container by ID and target tag
 
 ```bash
-./GoJelastic redeployEnv --nodeid <NODEID> --tag <TAG> --appid <APPID> --token <TOKEN> --url <URL>
+GoJelastic redeployEnv --nodeid <NODEID> --tag <TAG> --appid <APPID>
 ```
 
 ## License

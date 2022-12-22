@@ -10,45 +10,25 @@ import (
 
 func init() {
 	rootCmd.AddCommand(getEnvsCmd)
-	getEnvsCmd.Flags().String("token", "", "A token is required")
-	getEnvsCmd.Flags().String("url", "", "A url is required")
-	getEnvsCmd.MarkFlagRequired("token")
-	getEnvsCmd.MarkFlagRequired("url")
 
 	rootCmd.AddCommand(getEnvCmd)
-	getEnvCmd.Flags().String("token", "", "A token is required")
-	getEnvCmd.Flags().String("url", "", "A url is required")
 	getEnvCmd.Flags().String("appid", "", "An appid is required")
 	getEnvCmd.MarkFlagRequired("appid")
-	getEnvCmd.MarkFlagRequired("token")
-	getEnvCmd.MarkFlagRequired("url")
 
 	rootCmd.AddCommand(startEnvCmd)
-	startEnvCmd.Flags().String("token", "", "A token is required")
-	startEnvCmd.Flags().String("url", "", "A url is required")
 	startEnvCmd.Flags().String("appid", "", "An appid is required")
 	startEnvCmd.MarkFlagRequired("appid")
-	startEnvCmd.MarkFlagRequired("token")
-	startEnvCmd.MarkFlagRequired("url")
 
 	rootCmd.AddCommand(stopEnvCmd)
-	stopEnvCmd.Flags().String("token", "", "A token is required")
-	stopEnvCmd.Flags().String("url", "", "A url is required")
 	stopEnvCmd.Flags().String("appid", "", "An appid is required")
 	stopEnvCmd.MarkFlagRequired("appid")
-	stopEnvCmd.MarkFlagRequired("token")
-	stopEnvCmd.MarkFlagRequired("url")
 
 	rootCmd.AddCommand(redeployContainerByIdCmd)
-	redeployContainerByIdCmd.Flags().String("token", "", "A token is required")
-	redeployContainerByIdCmd.Flags().String("url", "", "A url is required")
 	redeployContainerByIdCmd.Flags().String("nodeid", "", "An nodeid is required")
 	redeployContainerByIdCmd.Flags().String("tag", "", "An tag is required")
 	redeployContainerByIdCmd.Flags().String("appid", "", "An appid is required")
 	redeployContainerByIdCmd.MarkFlagRequired("nodeid")
 	redeployContainerByIdCmd.MarkFlagRequired("tag")
-	redeployContainerByIdCmd.MarkFlagRequired("token")
-	redeployContainerByIdCmd.MarkFlagRequired("url")
 	redeployContainerByIdCmd.MarkFlagRequired("appid")
 }
 
