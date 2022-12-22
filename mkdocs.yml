@@ -1,0 +1,59 @@
+site_name: GoJelastic
+
+repo_url: https://github.com/yoanbernabeu/GoJelastic
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+
+plugins:
+  search:
+    lang:
+      - fr
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yOyO38
+    - icon: fontawesome/brands/github
+      link: https://github.com/yoanbernabeu
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/yoan.bernabeu
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/yoanbernabeu/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/c/yoandevco
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde

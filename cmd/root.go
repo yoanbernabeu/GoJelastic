@@ -6,6 +6,8 @@ package cmd
 
 import (
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -59,12 +61,7 @@ func initConfig() map[string]interface{} {
 	viper.AddConfigPath("$HOME")          // adding home directory as first search path
 	viper.AutomaticEnv()                  // read in environment variables that match
 
-	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
-	} else {
-		fmt.Println("No config file found")
-	}
+	viper.ReadInConfig()
 
 	return viper.AllSettings()
 }
@@ -82,4 +79,33 @@ func writeConfig(url string, token string) {
 	viper.WriteConfig()
 
 	fmt.Println("Config file written or updated")
+}
+
+//makeRequest makes a request to the Jelastic API
+var makeRequest = func(url string, method string, body string) string {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest(method, url, nil)
+
+	if err != nil {
+		panic(err)
+	}
+
+	resp, err := httpClient.Do(req)
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+
+	bodyBytes, err := io.ReadAll(resp.Body)
+
+	if err != nil {
+		panic(err)
+	}
+
+	bodyString := string(bodyBytes)
+
+	return bodyString
 }
