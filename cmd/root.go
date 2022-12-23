@@ -17,8 +17,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "GoJelastic",
-	Short: "A Alternative CLI for Jelastic",
-	Long:  `A Alternative and not official CLI for Jelastic`,
+	Short: "An Alternative CLI for Jelastic",
+	Long:  `An Alternative and not official CLI for Jelastic`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//Run: func(cmd *cobra.Command, args []string) {},

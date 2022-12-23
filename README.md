@@ -1,6 +1,6 @@
 # GoJelastic (Experimental)
 
-A Alternative CLI for Jelastic in Go
+An Alternative CLI for Jelastic in Go
 
 ## Why rewrite the CLI in Go?
 
