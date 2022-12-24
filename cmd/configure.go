@@ -34,7 +34,7 @@ var documentation = &cobra.Command{
 	Long:    "Generate documentation",
 	Example: `jelastic documentation`,
 	Run: func(cmd *cobra.Command, args []string) {
-		err := doc.GenMarkdownTree(rootCmd, "./docs/GoJelastic")
+		err := doc.GenMarkdownTree(rootCmd, "./docs/documentation")
 		if err != nil {
 			log.Fatal(err)
 		}

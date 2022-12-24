@@ -39,63 +39,9 @@ cd GoJelastic
 go build -o GoJelastic
 ```
 
-## Usage
+## Documentation
 
-### Variables definition
-
-* APPID: The application ID
-* TOKEN: Get your token [here](https://www.virtuozzo.com/application-platform-ops-docs/platform-access-token/)
-* URL: Your Jelastic API URL
-* NODEID: The unique ID of the node/container
-
-### Configure Environment into a file
-
-If you want to use the CLI without passing the token and the URL each time, you can configure it into a file (stored in your home directory in a file named `gojelastic.env`)
-
-
-```bash
-GoJelastic configure --token <TOKEN> --url <URL>
-```
-
-### Get Environment Info
-
-Get informations about one environment
-
-```bash
-GoJelastic getEnv --appid <APPID>
-```
-
-### Get Environments Info
-
-Get informations about all environments
-
-```bash
-GoJelastic getEnvs
-```
-
-### Start Environment
-
-Start an environment
-
-```bash
-GoJelastic startEnv --appid <APPID>
-```
-
-### Stop Environment
-
-Stop an environment
-
-```bash
-GoJelastic stopEnv --appid <APPID>
-```
-
-### Redeploy Container by ID
-
-Redeploy a container by ID and target tag
-
-```bash
-GoJelastic redeployEnv --nodeid <NODEID> --tag <TAG> --appid <APPID>
-```
+Please check the [documentation](https://yoanbernabeu.github.io/GoJelastic/) for more information.
 
 ## License
 
