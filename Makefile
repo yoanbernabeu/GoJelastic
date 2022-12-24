@@ -9,7 +9,7 @@ documentation: ## Generate documentation
 
 	cp ./README.md ./docs/index.md
 
-	grep -Rl "https://yoanbernabeu.github.io/GoJelastic/" ./docs/index.md | xargs sed -i 's/https:\/\/yoanbernabeu.github.io\/GoJelastic\//\/documentation\/GoJelastic/g'
+	grep -Rl "https://yoanbernabeu.github.io/GoJelastic/" ./docs/index.md | xargs sed -i 's/https:\/\/yoanbernabeu.github.io\/GoJelastic\//documentation\/GoJelastic/g'
 	
 	if [ -f ~/gojelastic.env.bak ]; then \
 		mv ~/gojelastic.env.bak ~/gojelastic.env; \

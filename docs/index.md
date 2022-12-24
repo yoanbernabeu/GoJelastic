@@ -41,7 +41,7 @@ go build -o GoJelastic
 
 ## Documentation
 
-Please check the [documentation](/documentation/GoJelastic) for more information.
+Please check the [documentation](documentation/GoJelastic) for more information.
 
 ## License
 
