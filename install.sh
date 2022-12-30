@@ -94,5 +94,5 @@ sudo chmod +x /usr/local/bin/GoJelastic
 
 # Sending a message to the user
 echo "-----------------------------------------"
-echo "\033[0;32mGoJelastic successfully installed"
+echo "GoJelastic successfully installed"
 echo "-----------------------------------------"
