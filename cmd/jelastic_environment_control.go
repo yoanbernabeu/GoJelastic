@@ -44,8 +44,8 @@ func init() {
 
 var getEnvsCmd = &cobra.Command{
 	Use:     "getEnvs",
-	Short:   "Gets the information about all environments of a user.",
-	Long:    "Gets the information about all environments of a user.",
+	Short:   "Gets the information about all environments of a user",
+	Long:    "Gets the information about all environments of a user",
 	GroupID: "Environment/Control",
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")

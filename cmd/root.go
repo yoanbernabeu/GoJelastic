@@ -5,8 +5,8 @@ Copyright © 2022 Yoan BERNABEU <yoan.bernabeu@gmail.com>
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 
@@ -81,31 +81,51 @@ func writeConfig(url string, token string) {
 	fmt.Println("Config file written or updated")
 }
 
-//makeRequest makes a request to the Jelastic API
-var makeRequest = func(url string, method string, body string) string {
-
+func makeHTTPRequest(url string, method string, body string) (*http.Response, error) {
 	httpClient := &http.Client{}
 	req, err := http.NewRequest(method, url, nil)
-
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	resp, err := httpClient.Do(req)
-
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
+	return resp, nil
+}
+
+func formatResponse(resp *http.Response) (string, error) {
 	defer resp.Body.Close()
 
-	bodyBytes, err := io.ReadAll(resp.Body)
-
+	var data interface{}
+	err := json.NewDecoder(resp.Body).Decode(&data)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
-	bodyString := string(bodyBytes)
+	jsonBytes, err := json.MarshalIndent(data, "", "    ")
+	if err != nil {
+		return "", err
+	}
 
-	return bodyString
+	return string(jsonBytes), nil
+}
+
+//makeRequest makes a request to the Jelastic API
+func makeRequest(url string, method string, body string) string {
+	resp, err := makeHTTPRequest(url, method, body)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	formattedResponse, err := formatResponse(resp)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	return formattedResponse
 }

@@ -4,7 +4,7 @@ An Alternative CLI for Jelastic in Go
 
 ## Why rewrite the CLI in Go?
 
-The official Jelastic command-line interface (CLI) is written in Java, which can make it heavy and inconvenient to use in continuous integration/continuous deployment (CI/CD) environments.
+The [official Jelastic command-line interface (CLI)](https://www.virtuozzo.com/application-platform-docs/cli/) is written in Java, which can make it heavy and inconvenient to use in continuous integration/continuous deployment (CI/CD) environments.
 
 Rewriting the CLI in Go will make it lighter and more portable, allowing it to be easily incorporated into CI/CD pipelines and used on a variety of systems without the need for additional dependencies.
 
@@ -16,13 +16,16 @@ This will make it easier for developers to manage and deploy applications on Jel
 
 #### From binary
 
-* Debian/Ubuntu
+* Linux/Darwin
 
 ```bash
-wget https://github.com/yoanbernabeu/GoJelastic/releases/download/v0.1.2/GoJelastic-0.1.2-linux-amd64.tar.gz
-tar -xvzf GoJelastic-0.1.2-linux-amd64.tar.gz
-sudo mv GoJelastic /usr/local/bin/
-sudo chmod +x /usr/local/bin/GoJelastic
+# With wget
+wget -qO- https://raw.githubusercontent.com/yoanbernabeu/GoJelastic/main/install.sh | bash
+```
+
+```bash
+# With curl
+curl -sL https://raw.githubusercontent.com/yoanbernabeu/GoJelastic/main/install.sh | bash
 ```
 
 * Other Operating Systems

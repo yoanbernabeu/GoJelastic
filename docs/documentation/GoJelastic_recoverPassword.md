@@ -1,21 +1,20 @@
-## GoJelastic getContainerEnvVars
+## GoJelastic recoverPassword
 
-Gets env vars of container
+Sends an email with the link to reset the account password
 
 ### Synopsis
 
-Gets env vars of container
+Sends an email with the link to reset the account password
 
 ```
-GoJelastic getContainerEnvVars [flags]
+GoJelastic recoverPassword [flags]
 ```
 
 ### Options
 
 ```
-      --appid string    An appid is required
-  -h, --help            help for getContainerEnvVars
-      --nodeid string   An nodeid is required
+      --email string   An email is required
+  -h, --help           help for recoverPassword
 ```
 
 ### Options inherited from parent commands
