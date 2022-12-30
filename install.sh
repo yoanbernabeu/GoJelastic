@@ -29,7 +29,7 @@ case "$distro" in
         url="https://github.com/yoanbernabeu/GoJelastic/releases/download/${version}/GoJelastic-${version}-darwin-arm64.tar.gz"
         ;;
       *)
-        echo "\033[0;31mUnsupported architecture\033[0m"
+        echo "Unsupported architecture"
         exit 1
         ;;
     esac
@@ -48,13 +48,13 @@ case "$distro" in
         url="https://github.com/yoanbernabeu/GoJelastic/releases/download/${version}/GoJelastic-${version}-linux-arm64.tar.gz"
         ;;
       *)
-        echo "\033[0;31mUnsupported architecture\033[0m"
+        echo "Unsupported architecture"
         exit 1
         ;;
     esac
     ;;
   *)
-    echo "\033[0;31mUnsupported distribution\033[0m"
+    echo "Unsupported distribution"
     exit 1
     ;;
 esac
@@ -66,7 +66,7 @@ if [ $? -eq 0 ]; then
   wget -O ~/GoJelastic.tar.gz $url -q --show-progress
 else
   echo "------------------------"
-  echo "\033[0;31mGoJelastic archive not found\033[0m"
+  echo "GoJelastic archive not found"
   echo "------------------------"
   exit 1
 fi
@@ -76,7 +76,7 @@ echo "Extracting GoJelastic..."
 if [ -f ~/GoJelastic.tar.gz ]; then
   tar -xzf ~/GoJelastic.tar.gz -C ~/
 else
-  echo "\033[0;31mGoJelastic archive not found\033[0m"
+  echo "GoJelastic archive not found"
   exit 1
 fi
 
@@ -94,5 +94,5 @@ sudo chmod +x /usr/local/bin/GoJelastic
 
 # Sending a message to the user
 echo "-----------------------------------------"
-echo "\033[0;32mGoJelastic successfully installed\033[0m"
+echo "\033[0;32mGoJelastic successfully installed"
 echo "-----------------------------------------"
