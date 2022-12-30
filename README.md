@@ -2,6 +2,8 @@
 
 An Alternative CLI for Jelastic in Go
 
+![Screenshot](readme.gif)
+
 ## Why rewrite the CLI in Go?
 
 The [official Jelastic command-line interface (CLI)](https://www.virtuozzo.com/application-platform-docs/cli/) is written in Java, which can make it heavy and inconvenient to use in continuous integration/continuous deployment (CI/CD) environments.

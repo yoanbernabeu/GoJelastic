@@ -1,4 +1,4 @@
-## GoJelastic
+# GoJelastic
 
 An Alternative CLI for Jelastic
 
