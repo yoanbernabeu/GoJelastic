@@ -1,21 +1,19 @@
-## GoJelastic getContainerEnvVars
+## GoJelastic getUserInfo
 
-Gets env vars of container
+Gets information about the user.
 
 ### Synopsis
 
-Gets env vars of container
+Gets information about the user.
 
 ```
-GoJelastic getContainerEnvVars [flags]
+GoJelastic getUserInfo [flags]
 ```
 
 ### Options
 
 ```
-      --appid string    An appid is required
-  -h, --help            help for getContainerEnvVars
-      --nodeid string   An nodeid is required
+  -h, --help   help for getUserInfo
 ```
 
 ### Options inherited from parent commands

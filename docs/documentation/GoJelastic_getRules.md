@@ -1,21 +1,20 @@
-## GoJelastic getContainerEnvVars
+## GoJelastic getRules
 
-Gets env vars of container
+Provides information about firewall rules for the environment
 
 ### Synopsis
 
-Gets env vars of container
+Provides information about firewall rules for the environment
 
 ```
-GoJelastic getContainerEnvVars [flags]
+GoJelastic getRules [flags]
 ```
 
 ### Options
 
 ```
-      --appid string    An appid is required
-  -h, --help            help for getContainerEnvVars
-      --nodeid string   An nodeid is required
+      --appid string   An appid is required
+  -h, --help           help for getRules
 ```
 
 ### Options inherited from parent commands

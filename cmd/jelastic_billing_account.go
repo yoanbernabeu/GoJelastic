@@ -13,12 +13,19 @@ func init() {
 
 	rootCmd.AddGroup(&cobra.Group{ID: "Billing/Account", Title: "Billing/Account"})
 
+	rootCmd.AddCommand(getExtendedAccountBillingHistoryByPeriodCmd)
+	getExtendedAccountBillingHistoryByPeriodCmd.Flags().String("appid", "", "An appid is required")
+	getExtendedAccountBillingHistoryByPeriodCmd.MarkFlagRequired("appid")
+	getExtendedAccountBillingHistoryByPeriodCmd.Flags().String("startTime", "", "A startTime is required")
+	getExtendedAccountBillingHistoryByPeriodCmd.MarkFlagRequired("startTime")
+	getExtendedAccountBillingHistoryByPeriodCmd.Flags().String("endTime", "", "A endTime is required")
+	getExtendedAccountBillingHistoryByPeriodCmd.MarkFlagRequired("endTime")
 }
 
 var getAccountCmd = &cobra.Command{
 	Use:     "getAccount",
-	Short:   "Gets account by session.",
-	Long:    "Gets account by session.",
+	Short:   "Gets account by session",
+	Long:    "Gets account by session",
 	GroupID: "Billing/Account",
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
@@ -26,6 +33,25 @@ var getAccountCmd = &cobra.Command{
 		appid, _ := cmd.Flags().GetString("appid")
 
 		finalUrl := url + "/billing/account/rest/getaccount" + "?session=" + token + "&envName=" + appid
+
+		response := makeRequest(finalUrl, "GET", "")
+		fmt.Println(response)
+	},
+}
+
+var getExtendedAccountBillingHistoryByPeriodCmd = &cobra.Command{
+	Use:     "getExtendedAccountBillingHistoryByPeriod",
+	Short:   "Gets extended account billing history by period",
+	Long:    "Gets extended account billing history by period",
+	GroupID: "Billing/Account",
+	Run: func(cmd *cobra.Command, args []string) {
+		token, _ := cmd.Flags().GetString("token")
+		url, _ := cmd.Flags().GetString("url")
+		appid, _ := cmd.Flags().GetString("appid")
+		starttime, _ := cmd.Flags().GetString("startTime")
+		endtime, _ := cmd.Flags().GetString("endTime")
+
+		finalUrl := url + "/billing/account/rest/getextendedaccountbillinghistorybyperiod" + "?session=" + token + "&appid=" + appid + "&startTime=" + starttime + "&endtime=" + endtime
 
 		response := makeRequest(finalUrl, "GET", "")
 		fmt.Println(response)
