@@ -19,6 +19,7 @@ var getRulesCmd = &cobra.Command{
 	Short:   "Provides information about firewall rules for the environment",
 	Long:    "Provides information about firewall rules for the environment",
 	GroupID: "Environment/Security",
+	Example: `GoJelastic getRules --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")

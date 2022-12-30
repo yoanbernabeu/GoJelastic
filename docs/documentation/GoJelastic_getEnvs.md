@@ -10,6 +10,12 @@ Gets the information about all environments of a user
 GoJelastic getEnvs [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getEnvs --token=token --url=url
+```
+
 ## Options
 
 ```

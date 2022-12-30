@@ -10,6 +10,12 @@ Gets account by session
 GoJelastic getAccount [flags]
 ```
 
+## Examples
+
+```
+GoJelastic billing/account getAccount --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

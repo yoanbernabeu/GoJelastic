@@ -13,7 +13,7 @@ GoJelastic configure [flags]
 ## Examples
 
 ```
-jelastic configure --token=your_token --url=your_url
+GoJelastic configure --token=token --url=url
 ```
 
 ## Options

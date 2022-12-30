@@ -10,6 +10,12 @@ Sends an email with the link to reset the account password
 GoJelastic recoverPassword [flags]
 ```
 
+## Examples
+
+```
+GoJelastic recoverPassword --url=url --email=email
+```
+
 ## Options
 
 ```

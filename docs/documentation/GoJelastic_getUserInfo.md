@@ -10,6 +10,12 @@ Gets information about the user.
 GoJelastic getUserInfo [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getUserInfo --token=token --url=url
+```
+
 ## Options
 
 ```

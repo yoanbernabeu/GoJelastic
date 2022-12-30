@@ -10,6 +10,12 @@ Gets env vars of container
 GoJelastic getContainerEnvVars [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getContainerEnvVars --token=token --url=url --appid=appid --nodeid=nodeid
+```
+
 ## Options
 
 ```

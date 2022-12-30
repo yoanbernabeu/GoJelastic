@@ -10,6 +10,12 @@ Get list of an environment
 GoJelastic getList [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getList --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

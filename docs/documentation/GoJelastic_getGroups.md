@@ -10,6 +10,12 @@ Get group list
 GoJelastic getGroups [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getGroups --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

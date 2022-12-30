@@ -10,6 +10,12 @@ Gets available regions for the user
 GoJelastic getRegions [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getRegions --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

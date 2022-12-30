@@ -10,6 +10,12 @@ Start one environment
 GoJelastic startEnv [flags]
 ```
 
+## Examples
+
+```
+GoJelastic startEnv --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

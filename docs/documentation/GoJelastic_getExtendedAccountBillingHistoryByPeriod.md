@@ -10,6 +10,12 @@ Gets extended account billing history by period
 GoJelastic getExtendedAccountBillingHistoryByPeriod [flags]
 ```
 
+## Examples
+
+```
+GoJelastic billing/account getExtendedAccountBillingHistoryByPeriod --token=token --url=url --appid=appid --startTime=startTime --endTime=endTime
+```
+
 ## Options
 
 ```

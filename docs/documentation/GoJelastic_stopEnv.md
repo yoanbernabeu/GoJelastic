@@ -10,6 +10,12 @@ Stop one environment
 GoJelastic stopEnv [flags]
 ```
 
+## Examples
+
+```
+GoJelastic stopEnv --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

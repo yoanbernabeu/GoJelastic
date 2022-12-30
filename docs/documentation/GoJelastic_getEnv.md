@@ -10,6 +10,12 @@ Gets the full information about environment (list of the nodes, settings etc.).
 GoJelastic getEnv [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getEnv --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

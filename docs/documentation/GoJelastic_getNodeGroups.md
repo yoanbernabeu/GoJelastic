@@ -10,6 +10,12 @@ Gets node group's data.
 GoJelastic getNodeGroups [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getNodeGroups --token=token --url=url --appid=appid --nodeid=nodeid
+```
+
 ## Options
 
 ```

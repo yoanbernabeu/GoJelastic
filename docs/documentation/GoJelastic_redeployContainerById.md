@@ -10,6 +10,12 @@ Redeploy a container by id and specify Tag
 GoJelastic redeployContainerById [flags]
 ```
 
+## Examples
+
+```
+GoJelastic redeployContainerById --token=token --url=url --nodeid=nodeid --tag=tag --appid=appid
+```
+
 ## Options
 
 ```

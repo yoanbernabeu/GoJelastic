@@ -13,7 +13,7 @@ GoJelastic documentation [flags]
 ## Examples
 
 ```
-jelastic documentation
+GoJelastic documentation
 ```
 
 ## Options

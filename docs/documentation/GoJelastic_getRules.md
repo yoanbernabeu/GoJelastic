@@ -10,6 +10,12 @@ Provides information about firewall rules for the environment
 GoJelastic getRules [flags]
 ```
 
+## Examples
+
+```
+GoJelastic getRules --token=token --url=url --appid=appid
+```
+
 ## Options
 
 ```

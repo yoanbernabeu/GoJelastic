@@ -47,6 +47,7 @@ var getEnvsCmd = &cobra.Command{
 	Short:   "Gets the information about all environments of a user",
 	Long:    "Gets the information about all environments of a user",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic getEnvs --token=token --url=url`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -63,6 +64,7 @@ var getEnvCmd = &cobra.Command{
 	Short:   "Gets the full information about environment",
 	Long:    "Gets the full information about environment (list of the nodes, settings etc.).",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic getEnv --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -80,6 +82,7 @@ var startEnvCmd = &cobra.Command{
 	Short:   "Start one environment",
 	Long:    "Start one environment",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic startEnv --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -97,6 +100,7 @@ var stopEnvCmd = &cobra.Command{
 	Short:   "Stop one environment",
 	Long:    "Stop one environment",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic stopEnv --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -114,6 +118,7 @@ var redeployContainerByIdCmd = &cobra.Command{
 	Short:   "Redeploy a container by id",
 	Long:    "Redeploy a container by id and specify Tag",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic redeployContainerById --token=token --url=url --nodeid=nodeid --tag=tag --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -133,6 +138,7 @@ var getRegionsCmd = &cobra.Command{
 	Short:   "Gets available regions for the user",
 	Long:    "Gets available regions for the user",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic getRegions --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -150,6 +156,7 @@ var getContainerEnvVarsCmd = &cobra.Command{
 	Short:   "Gets env vars of container",
 	Long:    "Gets env vars of container",
 	GroupID: "Environment/Control",
+	Example: `GoJelastic getContainerEnvVars --token=token --url=url --appid=appid --nodeid=nodeid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
