@@ -19,6 +19,7 @@ var getGroupsCmd = &cobra.Command{
 	Short:   "Get group list",
 	Long:    "Get group list",
 	GroupID: "Environment/Group",
+	Example: `GoJelastic getGroups --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")

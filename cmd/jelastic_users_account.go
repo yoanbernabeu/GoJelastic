@@ -20,6 +20,7 @@ var getUserInfoCmd = &cobra.Command{
 	Short:   "Gets information about the user.",
 	Long:    "Gets information about the user.",
 	GroupID: "Users/Account",
+	Example: `GoJelastic getUserInfo --token=token --url=url`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -36,6 +37,7 @@ var recoverPasswordCmd = &cobra.Command{
 	Short:   "Sends an email with the link to reset the account password",
 	Long:    "Sends an email with the link to reset the account password",
 	GroupID: "Users/Account",
+	Example: `GoJelastic recoverPassword --url=url --email=email`,
 	Run: func(cmd *cobra.Command, args []string) {
 		url, _ := cmd.Flags().GetString("url")
 		email, _ := cmd.Flags().GetString("email")

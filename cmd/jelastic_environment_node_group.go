@@ -23,6 +23,7 @@ var getNodeGroupsCmd = &cobra.Command{
 	Short:   "Gets node group's data.",
 	Long:    "Gets node group's data.",
 	GroupID: "Environment/NodeGroup",
+	Example: `GoJelastic getNodeGroups --token=token --url=url --appid=appid --nodeid=nodeid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")

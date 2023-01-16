@@ -21,7 +21,7 @@ var configure = &cobra.Command{
 	Use:     "configure",
 	Short:   "Configure your CLI",
 	Long:    "Configure your CLI",
-	Example: `jelastic configure --token=your_token --url=your_url`,
+	Example: `GoJelastic configure --token=token --url=url`,
 	GroupID: "configure",
 	Run: func(cmd *cobra.Command, args []string) {
 		writeConfig(cmd.Flags().Lookup("url").Value.String(), cmd.Flags().Lookup("token").Value.String())
@@ -32,7 +32,7 @@ var documentation = &cobra.Command{
 	Use:     "documentation",
 	Short:   "Generate documentation",
 	Long:    "Generate documentation",
-	Example: `jelastic documentation`,
+	Example: `GoJelastic documentation`,
 	Run: func(cmd *cobra.Command, args []string) {
 		err := doc.GenMarkdownTree(rootCmd, "./docs/documentation")
 		if err != nil {

@@ -27,6 +27,7 @@ var getAccountCmd = &cobra.Command{
 	Short:   "Gets account by session",
 	Long:    "Gets account by session",
 	GroupID: "Billing/Account",
+	Example: "GoJelastic billing/account getAccount --token=token --url=url --appid=appid",
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
@@ -44,6 +45,7 @@ var getExtendedAccountBillingHistoryByPeriodCmd = &cobra.Command{
 	Short:   "Gets extended account billing history by period",
 	Long:    "Gets extended account billing history by period",
 	GroupID: "Billing/Account",
+	Example: "GoJelastic billing/account getExtendedAccountBillingHistoryByPeriod --token=token --url=url --appid=appid --startTime=startTime --endTime=endTime",
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")

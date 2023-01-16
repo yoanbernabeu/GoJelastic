@@ -20,6 +20,7 @@ var getListCmd = &cobra.Command{
 	Short:   "Get list of an environment",
 	Long:    "Get list of an environment",
 	GroupID: "Environment/Export",
+	Example: `GoJelastic getList --token=token --url=url --appid=appid`,
 	Run: func(cmd *cobra.Command, args []string) {
 		token, _ := cmd.Flags().GetString("token")
 		url, _ := cmd.Flags().GetString("url")
