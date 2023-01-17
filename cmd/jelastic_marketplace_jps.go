@@ -2,13 +2,14 @@ package cmd
 
 import (
 	"fmt"
+	encode "net/url"
 
 	"github.com/spf13/cobra"
 )
 
 func init() {
 	rootCmd.AddCommand(installCmd)
-	installCmd.Flags().String("jps", "", "A JPS manifest is required")
+	installCmd.Flags().String("jps", "", "A JPS manifest URL is required")
 	installCmd.Flags().String("envName", "", "An environment name is required")
 	installCmd.Flags().String("envGroups", "", "An environment groups is optional")
 	installCmd.MarkFlagRequired("jps")
@@ -30,7 +31,9 @@ var installCmd = &cobra.Command{
 		envName, _ := cmd.Flags().GetString("envName")
 		envGroups, _ := cmd.Flags().GetString("envGroups")
 
-		finalUrl := url + "/marketplace/jps/rest/install" + "?session=" + token + "&envName=" + envName + "&jps=" + jps + "&envGroups=" + envGroups
+		urlEncodedJps := encode.QueryEscape(jps)
+
+		finalUrl := url + "/marketplace/jps/rest/install" + "?session=" + token + "&envName=" + envName + "&jps=" + urlEncodedJps + "&envGroups=" + envGroups
 
 		response := makeRequest(finalUrl, "POST", "")
 		fmt.Println(response)
