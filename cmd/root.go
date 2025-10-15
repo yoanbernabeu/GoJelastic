@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 Yoan BERNABEU <yoan.bernabeu@gmail.com>
-
 */
 package cmd
 
@@ -66,7 +65,7 @@ func initConfig() map[string]interface{} {
 	return viper.AllSettings()
 }
 
-//writeConfig writes config file and ENV variables if set.
+// writeConfig writes config file and ENV variables if set.
 func writeConfig(url string, token string) {
 	viper.SetConfigType("env")
 	viper.SetConfigName("gojelastic") // name of config file (without extension)
@@ -96,6 +95,14 @@ func makeHTTPRequest(url string, method string, body string) (*http.Response, er
 	return resp, nil
 }
 
+// JelasticResponse represents the structure of a Jelastic API response
+type JelasticResponse struct {
+	Result int         `json:"result"`
+	Error  string      `json:"error"`
+	Raw    interface{} `json:"raw"`
+	Source string      `json:"source"`
+}
+
 func formatResponse(resp *http.Response) (string, error) {
 	defer resp.Body.Close()
 
@@ -113,7 +120,25 @@ func formatResponse(resp *http.Response) (string, error) {
 	return string(jsonBytes), nil
 }
 
-//makeRequest makes a request to the Jelastic API
+// checkResponseForErrors checks if the Jelastic response contains an error
+// and exits with code 1 if it does
+func checkResponseForErrors(responseJSON string) {
+	var jelasticResp JelasticResponse
+	err := json.Unmarshal([]byte(responseJSON), &jelasticResp)
+	if err != nil {
+		// If we can't parse as JelasticResponse, it might be a different format
+		// In this case, we don't exit as it might be a valid response
+		return
+	}
+
+	// Check if there's an error in the response
+	if jelasticResp.Result != 0 || jelasticResp.Error != "" {
+		fmt.Fprintln(os.Stderr, responseJSON)
+		os.Exit(1)
+	}
+}
+
+// makeRequest makes a request to the Jelastic API
 func makeRequest(url string, method string, body string) string {
 	resp, err := makeHTTPRequest(url, method, body)
 	if err != nil {
@@ -126,6 +151,9 @@ func makeRequest(url string, method string, body string) string {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+
+	// Check for Jelastic API errors and exit with non-zero code if found
+	checkResponseForErrors(formattedResponse)
 
 	return formattedResponse
 }
