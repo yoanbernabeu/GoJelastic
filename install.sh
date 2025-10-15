@@ -11,7 +11,7 @@ echo "Distribution: $distro"
 echo "Architecture: $arch"
 
 # GoJelastic version
-version="v0.1.6"
+version="v0.2.0"
 
 echo "Version: $version"
 echo "------------------------"
